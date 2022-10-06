@@ -3,16 +3,57 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/top_app_bar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        android:id="@+id/video_player"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/top_app_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/video_player">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/textview_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Video Title" />
+
+            <TextView
+                android:id="@+id/textview_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                app:layout_constraintTop_toBottomOf="@id/textview_title"
+                tools:text="Video Author" />
+
+            <TextView
+                android:id="@+id/textview_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                app:layout_constraintTop_toBottomOf="@id/textview_author"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales elit sit amet nisi semper sagittis. Etiam vitae lorem non dolor blandit lacinia. In ac rutrum mauris. Vivamus nec elit a eros rhoncus vestibulum a vitae lorem. Nulla facilisi. Curabitur viverra velit eu nisi euismod commodo. In hac habitasse platea dictumst. Duis dapibus magna ut turpis egestas, at vehicula sapien aliquet. Sed venenatis massa non egestas tempus. Nulla facilisi. Cras lobortis fringilla arcu, ut vulputate dolor rutrum tristique. Quisque lacinia libero eget turpis sodales condimentum. Praesent porta ligula faucibus fermentum lacinia. Mauris sollicitudin, massa at efficitur sagittis, mi neque consequat tortor, rutrum egestas nibh magna eget felis." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
