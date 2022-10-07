@@ -16,8 +16,9 @@ class MainViewModel : ViewModel() {
 
     fun getVideos(){
         viewModelScope.launch {
-            service.getVideos().body()?.let {
-                videoList.postValue(it)
+            service.getVideos().body()?.let { response ->
+                val sortedList = response.sortedBy { it.publishedAt }
+                videoList.postValue(sortedList)
             }
         }
     }
