@@ -15,28 +15,30 @@
         android:id="@+id/video_player"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@id/top_app_bar"
+        app:layout_constraintEnd_toStartOf="@id/scroll_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/scroll_view"/>
+        app:layout_constraintTop_toBottomOf="@id/top_app_bar" />
 
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        app:layout_constraintStart_toEndOf="@id/video_player"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/video_player">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="20dp"
-            android:layout_marginHorizontal="20dp">
+            android:layout_marginHorizontal="20dp"
+            android:paddingBottom="20dp">
 
             <TextView
                 android:id="@+id/textview_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
+                android:fontFamily="@font/roboto_bold"
+                android:textSize="20sp"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Video Title" />
 
@@ -45,6 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
+                android:fontFamily="@font/roboto"
                 app:layout_constraintTop_toBottomOf="@id/textview_title"
                 tools:text="Video Author" />
 
@@ -53,6 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
+                android:fontFamily="@font/roboto"
                 app:layout_constraintTop_toBottomOf="@id/textview_author"
                 tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales elit sit amet nisi semper sagittis. Etiam vitae lorem non dolor blandit lacinia. In ac rutrum mauris. Vivamus nec elit a eros rhoncus vestibulum a vitae lorem. Nulla facilisi. Curabitur viverra velit eu nisi euismod commodo. In hac habitasse platea dictumst. Duis dapibus magna ut turpis egestas, at vehicula sapien aliquet. Sed venenatis massa non egestas tempus. Nulla facilisi. Cras lobortis fringilla arcu, ut vulputate dolor rutrum tristique. Quisque lacinia libero eget turpis sodales condimentum. Praesent porta ligula faucibus fermentum lacinia. Mauris sollicitudin, massa at efficitur sagittis, mi neque consequat tortor, rutrum egestas nibh magna eget felis." />
 
