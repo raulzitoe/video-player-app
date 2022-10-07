@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.silverorange.videoplayer.databinding.ActivityMainBinding
 import io.noties.markwon.Markwon
 
@@ -39,6 +40,16 @@ class MainActivity : AppCompatActivity() {
             }
             player.prepare()
             setVideoDetails("0")
+        }
+
+        viewModel.error.observe(this) { isError ->
+            if (isError) {
+                MaterialAlertDialogBuilder(this)
+                    .setTitle(getString(R.string.not_connected))
+                    .setMessage(getString(R.string.not_connected_full))
+                    .setPositiveButton(getString(R.string.ok)) { _, _ -> }
+                    .show()
+            }
         }
     }
 
